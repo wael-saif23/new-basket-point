@@ -8,12 +8,12 @@ class BottonStyle extends StatefulWidget {
     super.key,
     this.numberCount = 0,
     required this.theTeam,
-    // required this.Callbackfunction,
+    required this.Callbackfunction,
   });
 
   final int numberCount;
   final TeamName theTeam;
-  // final Function Callbackfunction;
+  final Function Callbackfunction;
 
   @override
   State<BottonStyle> createState() => _BottonStyleState();
@@ -25,7 +25,7 @@ class _BottonStyleState extends State<BottonStyle> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
+      onPressed: widget.Callbackfunction(() {
         TeamName teamName = widget.theTeam;
         switch (teamName) {
           case TeamName.A:
@@ -39,7 +39,7 @@ class _BottonStyleState extends State<BottonStyle> {
             teamBPoints = 0;
             break;
         }
-      },
+      }),
       style: const ButtonStyle(
         backgroundColor: MaterialStatePropertyAll(mainColor),
         minimumSize: MaterialStatePropertyAll(Size(150, 45)),

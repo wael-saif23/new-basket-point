@@ -15,11 +15,11 @@ class BasketBallPointer extends StatefulWidget {
 }
 
 class _BasketBallPointerState extends State<BasketBallPointer> {
-//  VoidCallback Callback(Function onPresed) {
-//     setState(() {
-//       onPresed;
-//     });
-//   }
+  void Callback(Function onPresed) {
+    setState(() {
+      onPresed;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,20 +52,22 @@ class _BasketBallPointerState extends State<BasketBallPointer> {
                         "$teamAPoints",
                         style: const TextStyle(color: textColor, fontSize: 100),
                       ),
-                      const BottonStyle(
+                      BottonStyle(
                         numberCount: 1,
                         theTeam: TeamName.A,
-                        // Callbackfunction: Callback
+                        Callbackfunction: Callback,
                       ),
                       hight16,
-                      const BottonStyle(
+                      BottonStyle(
                         numberCount: 2,
                         theTeam: TeamName.A,
+                        Callbackfunction: Callback,
                       ),
                       hight16,
-                      const BottonStyle(
+                      BottonStyle(
                         numberCount: 3,
                         theTeam: TeamName.A,
+                        Callbackfunction: Callback,
                       ),
                     ],
                   ),
@@ -83,19 +85,22 @@ class _BasketBallPointerState extends State<BasketBallPointer> {
                         "$teamBPoints",
                         style: const TextStyle(color: textColor, fontSize: 100),
                       ),
-                      const BottonStyle(
+                      BottonStyle(
                         numberCount: 1,
                         theTeam: TeamName.B,
+                        Callbackfunction: Callback,
                       ),
                       hight16,
-                      const BottonStyle(
+                      BottonStyle(
                         numberCount: 2,
                         theTeam: TeamName.B,
+                        Callbackfunction: Callback,
                       ),
                       hight16,
-                      const BottonStyle(
+                      BottonStyle(
                         numberCount: 3,
                         theTeam: TeamName.B,
+                        Callbackfunction: Callback,
                       ),
                     ],
                   ),
@@ -105,7 +110,10 @@ class _BasketBallPointerState extends State<BasketBallPointer> {
             const Spacer(
               flex: 3,
             ),
-            const BottonStyle(theTeam: TeamName.AB),
+            BottonStyle(
+              theTeam: TeamName.AB,
+              Callbackfunction: Callback,
+            ),
             const Spacer(
               flex: 3,
             )
