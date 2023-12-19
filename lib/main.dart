@@ -15,9 +15,13 @@ class BasketBallPointer extends StatefulWidget {
 }
 
 class _BasketBallPointerState extends State<BasketBallPointer> {
-  void Callback(Function onPresed) {
+  // this function to get numbers of eich team from buttons in file button
+  // and update numbers
+  // i make global variables to sent the number of global var to BottonStyle class in button file
+  void callback(int teamAPointsss, int teamBPointsss) {
     setState(() {
-      onPresed;
+      globalTeamAPoints = teamAPointsss;
+      globalTeamBPoints = teamBPointsss;
     });
   }
 
@@ -49,25 +53,25 @@ class _BasketBallPointerState extends State<BasketBallPointer> {
                         style: TextStyle(color: textColor, fontSize: 40),
                       ),
                       Text(
-                        "$teamAPoints",
+                        "$globalTeamAPoints",
                         style: const TextStyle(color: textColor, fontSize: 100),
                       ),
                       BottonStyle(
                         numberCount: 1,
                         theTeam: TeamName.A,
-                        Callbackfunction: Callback,
+                        callBackFunction: callback,
                       ),
                       hight16,
                       BottonStyle(
                         numberCount: 2,
                         theTeam: TeamName.A,
-                        Callbackfunction: Callback,
+                        callBackFunction: callback,
                       ),
                       hight16,
                       BottonStyle(
                         numberCount: 3,
                         theTeam: TeamName.A,
-                        Callbackfunction: Callback,
+                        callBackFunction: callback,
                       ),
                     ],
                   ),
@@ -82,25 +86,25 @@ class _BasketBallPointerState extends State<BasketBallPointer> {
                         style: TextStyle(color: textColor, fontSize: 40),
                       ),
                       Text(
-                        "$teamBPoints",
+                        "$globalTeamBPoints",
                         style: const TextStyle(color: textColor, fontSize: 100),
                       ),
                       BottonStyle(
                         numberCount: 1,
                         theTeam: TeamName.B,
-                        Callbackfunction: Callback,
+                        callBackFunction: callback,
                       ),
                       hight16,
                       BottonStyle(
                         numberCount: 2,
                         theTeam: TeamName.B,
-                        Callbackfunction: Callback,
+                        callBackFunction: callback,
                       ),
                       hight16,
                       BottonStyle(
                         numberCount: 3,
                         theTeam: TeamName.B,
-                        Callbackfunction: Callback,
+                        callBackFunction: callback,
                       ),
                     ],
                   ),
@@ -111,8 +115,9 @@ class _BasketBallPointerState extends State<BasketBallPointer> {
               flex: 3,
             ),
             BottonStyle(
+              numberCount: 0,
               theTeam: TeamName.AB,
-              Callbackfunction: Callback,
+              callBackFunction: callback,
             ),
             const Spacer(
               flex: 3,
@@ -124,5 +129,6 @@ class _BasketBallPointerState extends State<BasketBallPointer> {
   }
 }
 
-int teamAPoints = 0;
-int teamBPoints = 0;
+// global var to sent anther file or class
+int globalTeamAPoints = 0;
+int globalTeamBPoints = 0;
