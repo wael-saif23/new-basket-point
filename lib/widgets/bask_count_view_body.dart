@@ -99,7 +99,6 @@ class BasketBallCounterViewBady extends StatelessWidget {
                 flex: 3,
               ),
               const BottonStyle(
-                numberCount: 0,
                 theTeam: TeamName.AB,
               ),
               const Spacer(

@@ -7,17 +7,17 @@ class CounterCubit extends Cubit<CounterState> {
   CounterCubit() : super(CounterInitial());
   int teamAScore = 0;
   int teamBScore = 0;
-  addPoints({ int points = 0, required TeamName team}) {
+  addPoints({int points = 0, required TeamName team}) {
     if (team == TeamName.A) {
       teamAScore += points;
-      emit(CounterForTeamA());
+      emit(CounterInitial());
     } else if (team == TeamName.B) {
       teamBScore += points;
-      emit(CounterForTeamB());
+ emit(CounterInitial());
     } else if (team == TeamName.AB) {
       teamAScore = 0;
       teamBScore = 0;
-      emit(Counter0());
+      emit(CounterInitial());
     }
   }
 }

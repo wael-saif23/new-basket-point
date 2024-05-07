@@ -1,7 +1,9 @@
 import 'package:basketball/const.dart';
+import 'package:basketball/cubits/counter_cubit/counter_cubit.dart';
 
 import 'package:basketball/teamEnum.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BottonStyle extends StatelessWidget {
   const BottonStyle({
@@ -18,7 +20,9 @@ class BottonStyle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        BlocProvider.of<CounterCubit>(context).addPoints(team: theTeam,points: numberCount);
+      },
       style: const ButtonStyle(
         backgroundColor: MaterialStatePropertyAll(mainColor),
         minimumSize: MaterialStatePropertyAll(Size(150, 45)),
