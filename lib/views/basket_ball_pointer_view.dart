@@ -1,19 +1,15 @@
-
-
-
+import 'package:basketball/cubits/counter_cubit/counter_cubit.dart';
 import 'package:basketball/widgets/bask_count_view_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class BasketBallPointer extends StatefulWidget {
-  const BasketBallPointer({super.key});
-
-  @override
-  State<BasketBallPointer> createState() => _BasketBallPointerState();
-}
-
-class _BasketBallPointerState extends State<BasketBallPointer> {
+class BasketBallPointer extends StatelessWidget {
+  const BasketBallPointer({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: BasketBallCounterViewBady());
+    return BlocProvider(
+      create: (context) => CounterCubit(),
+      child: const MaterialApp(home: BasketBallCounterViewBady()),
+    );
   }
 }
